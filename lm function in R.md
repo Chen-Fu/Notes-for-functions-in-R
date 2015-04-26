@@ -20,3 +20,10 @@ Specificly, to fit (1,5),(2,7),(3,9) by method 2, we need to
 minimize
 l(a) = (ax1 - 5)^2 + (ax2 - 7)^2 + (ax3 - 9)^2
 Apply calculus, we get a = 23/7 = 3.285714, which is the same as the result from command lm(y~x-1).
+
+If we have a data frame, we can also fit data in this way:
+```{r}
+g <- as.data.frame(cbind(u,v))
+head(g)
+lm(u~v,data = g)
+```
